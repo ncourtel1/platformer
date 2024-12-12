@@ -1,0 +1,11 @@
+Inspired by Ultimate 2D Platformer Controller in Unity 
+link: https://github.com/Matthew-J-Spencer/Ultimate-2D-Controller/tree/main
+
+Player Data:
+   Movement:
+      - speed => current horizontal movement speed
+      - maxSpeed => max horizontal speed
+      - acceleration => player's capacity to gain horizontal speed
+      - groundDeceleration => pace at which the player comes to stop
+      - airDeceleration => deceleration in air only after stopping input mid-air
+      - jump
