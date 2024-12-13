@@ -6,6 +6,12 @@ Player Data:
       - speed => current horizontal movement speed
       - maxSpeed => max horizontal speed
       - acceleration => player's capacity to gain horizontal speed
+      - groundingForce => constant downward force applied while grounded 
       - groundDeceleration => pace at which the player comes to stop
       - airDeceleration => deceleration in air only after stopping input mid-air
-      - jump
+      - jumpPower => immediate velocity applied when jumping
+      - maxFallSpeed => maximum vertical movement speed
+      - fallAcceleration => player's capacity to gain fall speed
+      - jumpEndGravityModifier => gravity multiplier added when jump is released early
+      - coyoteTime => time before the coyote jump becomes unusable
+      - jumpBuffer => amount of time we buffer a jump
