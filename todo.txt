@@ -15,3 +15,10 @@ Player Data:
       - jumpEndGravityModifier => gravity multiplier added when jump is released early
       - coyoteTime => time before the coyote jump becomes unusable
       - jumpBuffer => amount of time we buffer a jump
+
+
+Separate Game fonctionality in different files for more flexibility
+
+Lundi: 
+   Faire avancer/sauter le personnage dans la fenetre
+   Utiliser une architecture de projet clean
