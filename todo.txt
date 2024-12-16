@@ -45,3 +45,10 @@ My Game:
       - One level to design so easy collision detection
       - Easy to make 
       - Simple player mechanics
+
+
+ECS :
+   Entity:
+      
+   Component:
+   System:

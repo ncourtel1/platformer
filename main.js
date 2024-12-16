@@ -1,23 +1,35 @@
-import { PlayerEntity } from "./entities/PlayerEntity.js";
-import { PlayerMovementSystem } from "./systems/PlayerMovementSystem.js";
-import { GravitySystem } from "./systems/GravitySystem.js";
+import { ECS } from './systems/ecs.js';
+import createPlayer from './entities/Player.js';
+import GravitySystem from './systems/GravitySystem.js';
+import MovementSystem from './systems/MovementSystem.js';
+import JumpSystem from './systems/JumpSystem.js';
 
-const player = new PlayerEntity(100, 100, "player");
+const ecs = new ECS();
+const player = createPlayer(100, 100);
+ecs.addEntity(player);
 
-function gameLoop() {
-  const deltaTime = 1 / 60;
+// Créer l'élément HTML du joueur
+const playerEl = document.createElement('div');
+playerEl.classList.add('player');
+document.getElementById('game-container').appendChild(playerEl);
 
-  // Inputs fictifs (à remplacer par de vrais listeners)
-  player.input.horizontal = 1; // Exemple : va à droite
+ecs.addSystem(new GravitySystem());
+ecs.addSystem(new MovementSystem());
+ecs.addSystem(new JumpSystem());
 
-  // Appel des systèmes
-  PlayerMovementSystem(player, deltaTime);
-  GravitySystem(player, deltaTime);
+let lastTime = performance.now();
 
-  // Mise à jour de la position HTML
-  player.updateElementPosition();
+function gameLoop(time) {
+  const dt = (time - lastTime) / 1000; // Delta time en secondes
+  lastTime = time;
+
+  ecs.update(dt);
+
+  // Mise à jour des positions HTML
+  const pos = player.getComponent('position');
+  playerEl.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
 
   requestAnimationFrame(gameLoop);
 }
 
-gameLoop();
+gameLoop(lastTime);
