@@ -8,7 +8,7 @@ export default class RunSystem{
 
          if(position && velocity){
             position.x += velocity.vx * input.x
-            console.log(position.x)
+            //console.log(position.x)
          }
       }
    }
