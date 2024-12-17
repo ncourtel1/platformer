@@ -20,8 +20,8 @@ function gameLoop(time){
 
    ecs.update(dt);
 
-   const playerPos = player.getComponent('position');
-   playerElement.style.transform = `translate(${playerPos.position.x}px, translate(${playerPos.position.y}px)`
+   const pos = player.getComponent('position');
+   playerElement.style.transform = `translate(${pos.x}px, ${pos.y}px)`
 
    requestAnimationFrame(gameLoop);
 }
