@@ -1,7 +1,7 @@
 export default class Entity{
    constructor() {
-      this.id = crypto.randomUUID();
       this.components = {};
+      this.id = crypto.randomUUID();
    }
 
    addComponent(name, component){
