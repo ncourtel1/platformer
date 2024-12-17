@@ -1,4 +1,4 @@
-export default class ECS {
+export class ECS {
    constructor() {
       this.entities = [];
       this.systems = [];
