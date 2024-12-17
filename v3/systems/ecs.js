@@ -1,3 +1,4 @@
+// ECS class that contains all entities and system of the game
 export default class ECS{
    constructor(){
       this.entities = [];
@@ -12,6 +13,7 @@ export default class ECS{
       this.systems.push(system);
    }
 
+   // apply the update method of every systems on every entities
    update(dt){
       for(const system of this.systems){
          system.update(this.entities, dt)

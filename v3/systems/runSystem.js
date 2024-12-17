@@ -1,4 +1,5 @@
 export default class RunSystem{
+   // Basic player horizontal movements
    update(entities, dt){
       for(const entity of entities){
          const position = entity.getComponent('position');

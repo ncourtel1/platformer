@@ -4,8 +4,10 @@ import PositionComponent from "../components/PositionComponent.js"
 import VelocityComponent from "../components/VelocityComponent.js"
 import VisualComponent from "../components/visualComponent.js"
 import CollisionComponent from "../components/collisionComponent.js"
+import StateComponent from "../components/stateComponent.js"
 import Entity from "./entity.js"
 
+// Create an Entity player with components attached to it
 export default function createPlayer(x, y){
    const player = new Entity();
    player.addComponent('input', new InputComponent());
@@ -13,6 +15,7 @@ export default function createPlayer(x, y){
    player.addComponent('position', new PositionComponent(x, y));
    player.addComponent('velocity', new VelocityComponent(5, 5));
    player.addComponent('visual', new VisualComponent("red", 32, 32))
-   player.addComponent('collision', new CollisionComponent());
+   player.addComponent('state', new StateComponent());
+   player.addComponent('collision', new CollisionComponent("box", {width:32, height: 32}));
    return player;
-} 
+}

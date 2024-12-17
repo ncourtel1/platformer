@@ -1,7 +1,7 @@
 export default class CollisionComponent{
-   constructor(type, size) {
+   constructor(type, options) {
       this.type = type; // "circle" ou "box"
-      this.size = size; // Dimesion selon le type
+      this.options = options; // Dimesion selon le type
    }
 }
 // Exemple :
