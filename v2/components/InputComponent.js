@@ -13,6 +13,6 @@ export class InputComponemt {
       window.addEventListener("keydown", (e) => {
          if(e.key === "a" || e.key === "d") this.horizontal = 0;
          if(e.key === " ") this.jumpReleased = false;
-      })
+      });
    }
-};
+}
