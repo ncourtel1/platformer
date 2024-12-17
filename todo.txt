@@ -49,6 +49,12 @@ My Game:
 
 ECS :
    Entity:
-      
+      only one
    Component:
+      - run
+      - jump
+      - gravity
+      - wall jump
+      - coyote/buffer (for better jump)
    System:
+      
