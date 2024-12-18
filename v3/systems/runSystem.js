@@ -5,10 +5,13 @@ export default class RunSystem{
          const position = entity.getComponent('position');
          const velocity = entity.getComponent('velocity');
          const input = entity.getComponent('input');
+         const state = entity.getComponent('state');
          const playerData = entity.getComponent('data')
 
          if(position && velocity){
-            position.x += velocity.vx * input.x
+            input.update();
+            position.x += velocity.vx * input.x;
+           
             //console.log(position.x)
          }
       }

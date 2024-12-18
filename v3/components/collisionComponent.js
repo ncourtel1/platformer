@@ -1,9 +1,11 @@
 export default class CollisionComponent{
-   constructor(type, options) {
-      this.type = type; // "circle" ou "box"
-      this.options = options; // Dimesion selon le type
+   constructor(bodyComponent, collisionTag){
+      this.bodyComponent = bodyComponent;
+      this.collisionTag = collisionTag;
+      this.collisionCallbacks = [];
+   }
+
+   setCollisionCallback(targetCollisionTag, callback){
+      this.collisionCallbacks[targetCollisionTag] = callback;
    }
 }
-// Exemple :
-// new CollisionComponent("box", { width: 50, height: 50 });
-// new CollisionComponent("circle", { radius: 25 });

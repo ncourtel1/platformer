@@ -16,6 +16,6 @@ export default function createPlayer(x, y){
    player.addComponent('velocity', new VelocityComponent(5, 5));
    player.addComponent('visual', new VisualComponent("red", 32, 32))
    player.addComponent('state', new StateComponent());
-   player.addComponent('collision', new CollisionComponent("box", {width:32, height: 32}));
+   //player.addComponent('collision', new CollisionComponent("box", {width:32, height: 32}));
    return player;
 }
