@@ -8,7 +8,7 @@ import CameraSystem from "./systems/cameraSystem.js";
 import JumpSystem from "./systems/jumpSystem.js";
 
 const ecs = new ECS();
-const player = createPlayer(100, 300, 300, 0, "white", 100, 100);
+const player = createPlayer(100, 500, 30, 0, "white", 100, 100);
 ecs.addEntity(player);
 const obj1 = createObject(200, 500, "green", 32, 32);
 ecs.addEntity(obj1);

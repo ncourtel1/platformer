@@ -10,7 +10,7 @@ export default class RunSystem{
 
          if(position && velocity){
             input.update();
-            position.x += velocity.vx * input.x * dt;
+            position.x += velocity.vx * input.x;
            
             //console.log(position.x)
          }

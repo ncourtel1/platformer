@@ -1,7 +1,8 @@
 export const PlayerDataComponent = {
    // Run
-   acceleration: 10,
-   deceleration: 2,
-   maxSpeed: 20,
-   jumpForce: 50
+   runAcceleration: 9.5,
+   runDecceleration: 9.5,
+   runMaxSpeed: 9.5,
+   runAccelAmount: (50 * 9.5) / 9.5,
+   runDeccelAmount: (50 * 9.5) / 9.5
 }
