@@ -16,11 +16,13 @@ export default class CameraSystem{
       if(playerPosition){
          let offsetX = playerPosition.x - this.cameraWidth/2;
          let offsetY = playerPosition.y - this.cameraHeight/2;
+         let offsetYMax = 200;
 
          // Empêcher la caméra de sortir des limites de la carte
          offsetX = Math.max(0, Math.min(offsetX, this.gameContainer.offsetWidth - this.cameraWidth));
          offsetY = Math.max(0, Math.min(offsetY, this.gameContainer.offsetHeight - this.cameraHeight));
 
+         offsetY = Math.min(offsetYMax, offsetY);
          // Déplacer la game-container pour simuler le déplacement de la caméra
          this.gameContainer.style.transform = `translate(${-offsetX}px, ${-offsetY}px)`;
       }
