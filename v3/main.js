@@ -4,9 +4,10 @@ import createObject from "./entities/createObject.js";
 import RunSystem from "./systems/RunSystem.js";
 import RenderSystem from "./systems/renderSystem.js";
 import CollisionSystem from "./systems/collisionSystem.js";
+import CameraSystem from "./systems/cameraSystem.js";
 
 const ecs = new ECS();
-const player = createPlayer(100, 100);
+const player = createPlayer(100, 100, "red", 32, 32);
 ecs.addEntity(player);
 const obj1 = createObject(200, 100);
 ecs.addEntity(obj1);
@@ -16,6 +17,7 @@ const game_container = document.getElementById("game-container");
 ecs.addSystem(new RunSystem());
 ecs.addSystem(new RenderSystem(game_container));
 ecs.addSystem(new CollisionSystem());
+ecs.addSystem(new CameraSystem(game_container, player, 400, 400));
 
 let lastTime = performance.now();
 

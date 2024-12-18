@@ -8,13 +8,13 @@ import StateComponent from "../components/stateComponent.js"
 import Entity from "./entity.js"
 
 // Create an Entity player with components attached to it
-export default function createPlayer(x, y){
+export default function createPlayer(x, y, color, width, height){
    const player = new Entity();
    player.addComponent('input', new InputComponent());
    player.addComponent('data', PlayerDataComponent);
    player.addComponent('position', new PositionComponent(x, y));
-   player.addComponent('velocity', new VelocityComponent(5, 5));
-   player.addComponent('visual', new VisualComponent("red", 32, 32))
+   player.addComponent('velocity', new VelocityComponent(10, 5));
+   player.addComponent('visual', new VisualComponent(color, width, height))
    player.addComponent('state', new StateComponent());
    //player.addComponent('collision', new CollisionComponent("box", {width:32, height: 32}));
    return player;
