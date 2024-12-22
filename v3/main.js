@@ -8,17 +8,21 @@ import CameraSystem from "./systems/cameraSystem.js";
 import JumpSystem from "./systems/jumpSystem.js";
 
 const ecs = new ECS();
-const player = createPlayer(100, 500, 30, 0, "white", 100, 100);
-ecs.addEntity(player);
-const obj1 = createObject(200, 500, "green", 32, 32);
+const obj1 = createObject(600, 500, "green", 32, 32);
 ecs.addEntity(obj1);
+const player = createPlayer(300, 100, 30, 30, "white", 100, 100);
+ecs.addEntity(player);
+
 
 const game_container = document.getElementById("game-container");
 
+let cameraSys = new CameraSystem(game_container, player, 400, 400);
+ecs.addSystem(new CollisionSystem(game_container, cameraSys));
 ecs.addSystem(new RunSystem());
 ecs.addSystem(new RenderSystem(game_container));
-ecs.addSystem(new CollisionSystem());
-ecs.addSystem(new CameraSystem(game_container, player, 400, 400));
+
+ecs.addSystem(cameraSys);
+
 ecs.addSystem(new JumpSystem());
 
 let lastTime = performance.now();

@@ -3,7 +3,7 @@ export default class RenderSystem{
       this.container = container;
    }
 
-   update(entities, dt){
+   update(entities){
       for(const entity of entities){
          const position = entity.getComponent('position');
          const visual = entity.getComponent('visual');
