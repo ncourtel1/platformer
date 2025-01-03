@@ -1,4 +1,4 @@
-export class InputComponent {
+export default class InputComponent {
    constructor() {
       this.horizontal = 0;
       this.vertical = 0;

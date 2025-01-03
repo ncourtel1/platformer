@@ -10,6 +10,28 @@ export default class CameraSystem{
       this.camera.style.height = `${this.cameraHeight}px`;
    }
 
+   getVisibleArea(){
+      const playerPosition = this.player.getComponent('position');
+
+      if(playerPosition){
+         let offsetX = playerPosition.x - this.cameraWidth/2;
+         let offsetY = playerPosition.y - this.cameraHeight/2;
+
+         // Empêcher la caméra de sortir des limites de la carte
+         offsetX = Math.max(0, Math.min(offsetX, this.gameContainer.offsetWidth - this.cameraWidth));
+         offsetY = Math.max(0, Math.min(offsetY, this.gameContainer.offsetHeight - this.cameraHeight));
+
+         return{
+            x: offsetX,
+            y: offsetY,
+            width: this.cameraWidth,
+            height: this.cameraHeight
+         }
+      }
+      // Valeur par défaut si le joueur n'a pas de position
+      return { x: 0, y: 0, width: this.cameraWidth, height: this.cameraHeight };
+   }
+
    update(){
       const playerPosition = this.player.getComponent('position');
       const playerVisual = this.player.getComponent('visual');

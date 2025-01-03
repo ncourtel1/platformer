@@ -1,5 +1,5 @@
 import { Entity } from "./Rigidbody.js"
-import { InputComponemt } from "../components/InputComponent.js"
+import { InputComponemt } from "./components/InputComponent.js"
 import { StateComponent } from "../components/StateComponent.js"
 import { PhysicsComponent } from "../components/PhysicsComponent.js"
 import { PlayerData } from "../components/PlayerData.js"
