@@ -5,7 +5,7 @@ export default class CollisionComponent{
       this.collisionCallbacks = [];
    }
 
-   setCollisionCallback(targetCollisionTag, callback){
-      this.collisionCallbacks[targetCollisionTag] = callback;
-   }
+   // setCollisionCallback(targetCollisionTag, callback){
+   //    this.collisionCallbacks[targetCollisionTag] = callback;
+   // }
 }

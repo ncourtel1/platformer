@@ -12,10 +12,11 @@ export default class CameraSystem{
 
    update(){
       const playerPosition = this.player.getComponent('position');
+      const playerVisual = this.player.getComponent('visual');
 
       if(playerPosition){
-         let offsetX = playerPosition.x - this.cameraWidth/2;
-         let offsetY = playerPosition.y - this.cameraHeight/2;
+         let offsetX = playerPosition.x - this.cameraWidth/2 + ((playerPosition.x + playerVisual.width)/2);
+         let offsetY = playerPosition.y - this.cameraHeight/2 + ((playerPosition.y + playerVisual.height)/2) 
          let offsetYMax = 200;
 
          // Empêcher la caméra de sortir des limites de la carte

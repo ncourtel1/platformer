@@ -1,5 +1,5 @@
 import InputComponent from "../components/InputComponent.js"
-import { PlayerDataComponent } from "../components/PlayerDataComponent.js"
+import { PlayerDataComponent } from "../components/playerDataComponent.js"
 import PositionComponent from "../components/PositionComponent.js"
 import VelocityComponent from "../components/VelocityComponent.js"
 import VisualComponent from "../components/visualComponent.js"
